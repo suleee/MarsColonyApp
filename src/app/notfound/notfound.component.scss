@@ -1,0 +1,25 @@
+.notfoundpage {
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.text {
+  width: 100%;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  align-self: flex-end;
+  font-size: 30px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  font-weight: 100;
+}
