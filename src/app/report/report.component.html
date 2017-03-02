@@ -6,28 +6,17 @@
         Safety on Mars is your responsibility
       </h2>
     </div>
-    <form [formGroup]="registerForm" action class="form">
+    <form [formGroup]="reportForm" action class="form">
       <fieldset class="list">
-        <!--<div class="select-wrapper">
-          <select required formControlName="job_id" name="job_id" class="selector">
-          <option value="">Select occupation</option>
-          <option *ngFor="let job of marsJobs" value="{{ job.id }}">{{ job.name }}</option>
-        </select>
-        </div>-->
-
         <div class="select-wrapper">
-          <select name="occupation" class="selector">
-          <option value="placeholder">Select alien type</option>
-          <option value="1">Special K</option>
-          <option value="2">Endomorph</option>
-          <option value="3">Octospider</option>
-          <option value="4">The Predator</option>
-          <option value="4">Darth Vader</option>
-          <option value="4">Donald Trump</option>
-          <option value="4">Yoda</option>
+          <select required formControlName="type" name="type" class="selector">
+          <option value="">Select occupation</option>
+          <option *ngFor="let alien of alienType" value="{{ alien.type }}">{{ alien.type }}</option>
         </select>
         </div>
+
           <textarea name="textarea" rows="7" cols="43">Action taken</textarea>
+           <button type="button" (click)="logColonist()">LogColonist</button>
       </fieldset>
       <fieldset class="btn">
         <a routerLink="/encounters" class="checkin">Submit Report</a>
