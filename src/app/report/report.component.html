@@ -14,13 +14,12 @@
           <option *ngFor="let alien of alienType" value="{{ alien.type }}">{{ alien.type }}</option>
         </select>
         </div>
-
-          <textarea name="textarea" rows="7" cols="43">Action taken</textarea>
-           <button type="button" (click)="logColonist()">LogColonist</button>
+        <textarea name="textarea" rows="7" cols="43">Action taken</textarea>
+        <button type="button" (click)="logColonist()">LogColonist</button>
       </fieldset>
       <fieldset class="btn">
         <a routerLink="/encounters" class="checkin">Submit Report</a>
       </fieldset>
     </form>
-    </div>
   </div>
+</div>

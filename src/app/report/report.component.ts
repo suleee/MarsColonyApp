@@ -19,10 +19,14 @@ export class ReportComponent implements OnInit {
   constructor() {
     //TODO: Call API, get jobs.
     this.alienType = [
-      { type: "Alien Hunter", id: 1, submitted_by: '12', description: "hunter" },
-       { type: "", id: 1, submitted_by: '12', description: "hunter" },
-        { type: "Alien Hunter", id: 1, submitted_by: '12', description: "hunter" },
-
+      { type: "Special K", id: 1, submitted_by: '12', description: "hunter" },
+      { type: "Endomorph", id: 1, submitted_by: '12', description: "hunter" },
+      { type: "Endomorph", id: 1, submitted_by: '12', description: "hunter" },
+      { type: "Octospider", id: 1, submitted_by: '12', description: "hunter" },
+      { type: "The predator", id: 1, submitted_by: '12', description: "hunter" },
+      { type: "Darth Vader", id: 1, submitted_by: '12', description: "hunter" },
+      { type: "Donald Trump", id: 1, submitted_by: '12', description: "hunter" },
+      { type: "Yoda", id: 1, submitted_by: '12', description: "hunter" },
     ];
 
 
