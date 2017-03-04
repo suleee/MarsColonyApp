@@ -34,19 +34,8 @@ input {
 }
 
 input:invalid {
-    height: 50px;
-
-    animation: blur 1s infinite;
-
-}
-
-@keyframes blur {
-  0% {
-    box-shadow: 0px 0px 3px 1px rgba(177, 0, 0, 0.2);
-  }
-  100% {
-    box-shadow: 0px 0px 3px 9px rgba(177, 0, 0, 0.5);
-  }
+  height: 50px;
+  animation: blur 1s infinite;
 }
 
 input::placeholder {
@@ -73,6 +62,15 @@ fieldset {
   padding-left: 5px;
 }
 
+.select-wrapper {
+  height: 30px;
+  // animation: blur 1s infinite;
+}
+
+
+button{
+  margin-top: 20px;
+}
 .selector::after {
   color: white;
 }
@@ -82,11 +80,28 @@ fieldset {
   text-align: center;
 }
 
-.btn a {
+.checkin {
+
   text-decoration: none;
   color: white;
   font-family: 'Roboto', sans-serif;
   font-size: 40px;
   font-weight: 100;
   text-align: center;
+  background-color: black;
+  border: none;
+}
+
+
+.ng-invalid.submitting fieldset input.ng-invalid, .ng-invalid.submitting fieldset select.ng-invalid{
+  animation: blur 1s infinite;
+}
+
+@keyframes blur {
+  0% {
+    box-shadow: 0px 0px 3px 1px rgba(177, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0px 0px 3px 9px rgba(177, 0, 0, 0.5);
+  }
 }

@@ -2,21 +2,25 @@
 })-->
 <div class="registerpage">
   <h1>Register</h1>
-  <form [formGroup]="registerForm" class="inputs">
+  <form [formGroup]="registerForm"
+  class="register-form inputs"
+  [ngClass]="{ 'submitting': clickedButton }"
+  (ngSubmit)="postNewColonist($event)">
+
     <fieldset class="list">
-      <input type="text" class="name" placeholder="Name" required formControlName="name" name="colonistName" minlength="3">
-      <input type="number" placeholder="Age" required formControlName="age" name="colonistAge" class="age">
+      <input type="text" class="name" placeholder="Name"  formControlName="name" name="colonistName" minlength="3">
+      <input type="number" placeholder="Age" formControlName="age" name="colonistAge" class="age">
       <div class="select-wrapper">
-        <select required formControlName="job_id" name="job_id" class="selector">
+        <select formControlName="job_id" name="job_id" class="selector">
           <option value="">Select occupation</option>
           <!-- marsJobs -->
           <option *ngFor="let job of marsJobs" value="{{ job.id }}">{{ job.name }}</option>
         </select>
       </div>
-      <button type="button" (click)="logColonist()">LogColonist</button>
+      <!--<button type="submit" (click)="postNewColonist()">LogColonist</button>-->
     </fieldset>
     <fieldset class="btn">
-      <a routerLink="/encounters" class="checkin">Check in</a>
+      <button class="checkin">Submit</button>
     </fieldset>
   </form>
 </div>

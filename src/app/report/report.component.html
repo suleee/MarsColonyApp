@@ -6,19 +6,25 @@
         Safety on Mars is your responsibility
       </h2>
     </div>
-    <form [formGroup]="reportForm" action class="form">
+    <!--<form [formGroup]="reportForm" action class="form">-->
+     <form [formGroup]="reportForm"
+  class="report-form inputs"
+  [ngClass]="{ 'submitting': submitting }"
+  (ngSubmit)="postNewColonist($event)">
+
       <fieldset class="list">
         <div class="select-wrapper">
-          <select required formControlName="type" name="type" class="selector">
-          <option value="">Select occupation</option>
-          <option *ngFor="let alien of alienType" value="{{ alien.type }}">{{ alien.type }}</option>
+          <select formControlName="atype" name="atype" class="selector">
+          <option value="">Select Alien</option>
+          <!-- marsJobs -->
+          <option *ngFor="let alien of alienType" value="{{ alien.id }}">{{ alien.type }}</option>
         </select>
         </div>
-        <textarea name="textarea" rows="7" cols="43">Action taken</textarea>
-        <button type="button" (click)="logColonist()">LogColonist</button>
+        <textarea placeholder="text" name="textarea" rows="7" cols="43" formControlName= "action" name="action">Action taken</textarea>
+        <!--<button type="button">LogColonist</button>-->
       </fieldset>
       <fieldset class="btn">
-        <a routerLink="/encounters" class="checkin">Submit Report</a>
+        <a class="checkin">Submit Report</a>
       </fieldset>
     </form>
   </div>

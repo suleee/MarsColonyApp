@@ -1,51 +1,90 @@
 import { Component, OnInit } from '@angular/core';
-import { NewEncounter, Alien } from '../models';
+import { NewEncounter, Alien, Colonist } from '../models';
 import { FormGroup, FormControl, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 
+import { ALIENS_URL, ENCOUNTERS_URL } from '../models/API';
 
+import { EncountersAPIService } from '../apiService/encounters';
+import { AliensAPIService } from '../apiService/aliens';
 
 @Component({
   selector: 'app-report',
   templateUrl: './report.component.html',
-  styleUrls: ['./report.component.scss']
+  styleUrls: ['./report.component.scss'], 
+   providers: [AliensAPIService, EncountersAPIService]
 })
+
+
 export class ReportComponent implements OnInit {
 
-  newEncounter: NewEncounter;
+   newEncounter: NewEncounter; 
   alienType: Alien[];
   reportForm: FormGroup;
-  // public fakeColonist;
 
-  constructor() {
-    //TODO: Call API, get jobs.
-    this.alienType = [
-      { type: "Special K", id: 1, submitted_by: '12', description: "hunter" },
-      { type: "Endomorph", id: 1, submitted_by: '12', description: "hunter" },
-      { type: "Endomorph", id: 1, submitted_by: '12', description: "hunter" },
-      { type: "Octospider", id: 1, submitted_by: '12', description: "hunter" },
-      { type: "The predator", id: 1, submitted_by: '12', description: "hunter" },
-      { type: "Darth Vader", id: 1, submitted_by: '12', description: "hunter" },
-      { type: "Donald Trump", id: 1, submitted_by: '12', description: "hunter" },
-      { type: "Yoda", id: 1, submitted_by: '12', description: "hunter" },
-    ];
+    constructor(
+      private aliensAPIService: AliensAPIService,
+      private encountersApiService: EncountersAPIService
+      ) {
+    
+    this.getAlien();
 
+    // this.clickedButton = false;
 
     this.reportForm = new FormGroup({
-      type: new FormControl('', [Validators.required]),
-      date: new FormControl('', [Validators.required]),
+
       atype: new FormControl('', [Validators.required]),
-      action: new FormControl('', [Validators.required]),
-      colonist_id: new FormControl('', [Validators.required]),
+      action: new FormControl('', [Validators.required,Validators.maxLength(100)]),
+    
     });
+
   }
 
-  logColonist() {
-    // if(this.newColonist.name === '' || this.newColonist){}
-    console.log(this.reportForm.controls);
+
+  acceptAge(min: number, max: number) {
+    return (control: AbstractControl): { [key: string]: any } => {
+      // if (control.value < min || control.value > max) {
+        return { 'Sorry good luck!': { age: control.value } };
+      // }
+    }
   }
+
+
+
   ngOnInit() {
 
   }
+  getAlien() {
+        this.aliensAPIService.getAlien()
+                              .subscribe((result) => {
+                                this.alienType = result;
+                                console.log(this.alienType);
+                                  console.log(this.reportForm.controls);
+                              });
+  }
 
+  private getDate(){
+    const d = new Date();
+    return `${d.getFullYear()} - ${d.getMonth() + 1} - ${d.getDate()}`;
+  }
+
+  postNewEncounter(event) {
+    event.preventDefault();
+    if (!this.reportForm.invalid) {
+      //The form is invalid...
+    } else {
+      const date = this.reportForm.get('date').value;
+      const atype = this.reportForm.get('atype').value;
+      const action = this.reportForm.get('action').value;
+      const colonist_id = localStorage.getItem('colonist_id');
+
+      const newEncounter: NewEncounter = new NewEncounter(date, atype, action, colonist_id);
+      const encounterPostRequest = {encounter: newEncounter};
+
+      this.encountersApiService.saveNewEncounter(encounterPostRequest)
+                              .subscribe((result) => {
+                                console.log('Colonist was saved:', result);
+                              
+                              });
+   }
+  }
 }
-

@@ -19,16 +19,19 @@ export class NewColonist {
 }
 
 export class NewEncounter {
+    // id: number;
     date: string;
     atype: string;
     action: string;
     colonist_id: string;
 
     constructor(date:string, atype:string, action: string, colonist_id:string){
+    // this.id = id;
     this.date = date;
     this.atype = atype;
     this.action = action;
     this.colonist_id = colonist_id;
+    
     }
 }
 

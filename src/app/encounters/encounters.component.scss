@@ -29,6 +29,7 @@ h2 {
 
 .article {
   height: 60%;
+  overflow: scroll;
 }
 
 .en-link {
@@ -45,4 +46,8 @@ h2 {
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
   align-self: center;
+}
+
+a{
+  color: white;
 }
