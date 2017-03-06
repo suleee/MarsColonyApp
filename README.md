@@ -6,6 +6,13 @@ This is a web-based application for Earth colonists exploring Mars using Angular
 ![alt tag](mars.png)
 
 #Technologies used
+### Angular 2 Router:
+* ngForm,ngFor, ngIf, ngClass, ngModel and OnInit
+* Class (to represent form data)
+* Decorator (@Component, @Routes, etc.)
+* Interface (to represent API Data)
+* Component
+
 ### Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
