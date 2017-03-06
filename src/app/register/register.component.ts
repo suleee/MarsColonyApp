@@ -21,12 +21,12 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   clickedButton: boolean;
 
-    constructor(
-      private colonistApiService: ColonistAPIService,
-      private jobsAPIService: JobsAPIService, 
-      private router: Router
-      ) {
-    
+  constructor(
+    private colonistApiService: ColonistAPIService,
+    private jobsAPIService: JobsAPIService,
+    private router: Router
+  ) {
+
     this.getMarsJobs();
 
     this.clickedButton = false;
@@ -55,11 +55,11 @@ export class RegisterComponent implements OnInit {
 
   }
   getMarsJobs() {
-        this.jobsAPIService.getMarsJobs()
-                              .subscribe((result) => {
-                                this.marsJobs = result;
-                                console.log('Get mars jobs', result);
-                              });
+    this.jobsAPIService.getMarsJobs()
+      .subscribe((result) => {
+        this.marsJobs = result;
+        console.log('Get mars jobs', result);
+      });
   }
   postNewColonist(event) {
     event.preventDefault();
@@ -72,16 +72,16 @@ export class RegisterComponent implements OnInit {
       const job_id = this.registerForm.get('job_id').value;
 
       const newColonist: NewColonist = new NewColonist(name, age, job_id);
-      const colonistPostRequest = {colonist: newColonist};
+      const colonistPostRequest = { colonist: newColonist };
 
       this.colonistApiService.saveColonist(colonistPostRequest)
-                              .subscribe((result) => {
-                                 localStorage.setItem('colonist_id', JSON.stringify(result.id)); 
-                                console.log('Colonist was saved:', result);
-                              });
+        .subscribe((result) => {
+          localStorage.setItem('colonist_id', JSON.stringify(result.id));
+          console.log('Colonist was saved:', result);
+        });
       this.router.navigate(['encounters']);
     }
-    
+
   }
 }
 

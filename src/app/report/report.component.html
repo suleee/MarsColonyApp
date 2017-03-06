@@ -7,24 +7,20 @@
       </h2>
     </div>
     <!--<form [formGroup]="reportForm" action class="form">-->
-     <form [formGroup]="reportForm"
-  class="report-form inputs"
-  [ngClass]="{ 'submitting': submitting }"
-  (ngSubmit)="postNewColonist($event)">
-
+    <form [formGroup]="reportForm" class="report-form inputs" [ngClass]="{ 'submitting': clickedButton }" (ngSubmit)="postNewEncounter($event)">
       <fieldset class="list">
         <div class="select-wrapper">
           <select formControlName="atype" name="atype" class="selector">
-          <option value="">Select Alien</option>
+          <option value="">Select alien type</option>
           <!-- marsJobs -->
           <option *ngFor="let alien of alienType" value="{{ alien.id }}">{{ alien.type }}</option>
         </select>
         </div>
-        <textarea placeholder="text" name="textarea" rows="7" cols="43" formControlName= "action" name="action">Action taken</textarea>
+        <textarea placeholder="Action taken" name="textarea" rows="7" cols="43" formControlName="action" name="action"></textarea>
         <!--<button type="button">LogColonist</button>-->
       </fieldset>
       <fieldset class="btn">
-        <a class="checkin">Submit Report</a>
+        <button class="checkin">Submit Report</button>
       </fieldset>
     </form>
   </div>

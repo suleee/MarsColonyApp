@@ -10,14 +10,14 @@ import { ALIENS_URL } from '../models/API';
 @Injectable()
 export class AliensAPIService {
 
-  constructor(private http: Http) {}
+  constructor(private http: Http) { }
 
-getAlien() : Observable<Alien[]>{
+  getAlien(): Observable<Alien[]> {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.get(ALIENS_URL, { headers })
-                    .map((res: Response) => res.json().aliens);
-}
-      
+      .map((res: Response) => res.json().aliens);
+  }
+
 
 }

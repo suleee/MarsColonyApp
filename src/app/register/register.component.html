@@ -2,13 +2,9 @@
 })-->
 <div class="registerpage">
   <h1>Register</h1>
-  <form [formGroup]="registerForm"
-  class="register-form inputs"
-  [ngClass]="{ 'submitting': clickedButton }"
-  (ngSubmit)="postNewColonist($event)">
-
+  <form [formGroup]="registerForm" class="register-form inputs" [ngClass]="{ 'submitting': clickedButton }" (ngSubmit)="postNewColonist($event)">
     <fieldset class="list">
-      <input type="text" class="name" placeholder="Name"  formControlName="name" name="colonistName" minlength="3">
+      <input type="text" class="name" placeholder="Name" formControlName="name" name="colonistName" minlength="3">
       <input type="number" placeholder="Age" formControlName="age" name="colonistAge" class="age">
       <div class="select-wrapper">
         <select formControlName="job_id" name="job_id" class="selector">
