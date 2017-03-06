@@ -36,7 +36,7 @@ export class ReportComponent implements OnInit {
     this.reportForm = new FormGroup({
 
       atype: new FormControl('', [Validators.required]),
-      action: new FormControl('', [Validators.required]),
+      action: new FormControl('', [Validators.required,Validators.maxLength(100)]),
 
     });
 
