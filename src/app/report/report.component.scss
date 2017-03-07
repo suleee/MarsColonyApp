@@ -1,14 +1,17 @@
+@import '../../_theme.scss';
+
 .reportpage {
-  background-color: black;
+  // background-color: black;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   height: 100vh;
-  font-family: 'Roboto', sans-serif;
+  font-family: $font__main;
 }
 
 .text-wrapper h1 {
   height: 35px;
+  margin: 20px 0;
 }
 
 .report-container {
@@ -17,7 +20,7 @@
 }
 
 .select-wrapper {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .reportpage h1 {
@@ -57,25 +60,36 @@ form {
   border-radius: 0;
   border-bottom: 1px solid white;
   background-color: rgba(255, 255, 255, 0);
-  width: 100%;
+  width: 96%;
   height: 30px;
   margin-bottom: 20px;
   font-size: 18px;
-  color: #ed4343;
+  color: white;
 }
 
 .selector::after {
   color: white;
 }
 
-textarea {
+.report-form {
   width: 100%;
+  margin-top: 20px;
+}
+
+textarea {
+  width: 95%;
   font-size: 20px;
-  color: black;
+  color: white;
+  border-radius: 5px;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  font-weight: 100;
 }
 
 textarea::placeholder {
-  color: #ed4343;
+  color: white;
+
 }
 
 .reportpage a {
@@ -90,21 +104,40 @@ textarea::placeholder {
 a {
   color: white;
 }
-
+.list{
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  height: 300px;
+}
 .checkin {
   color: white;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0);
   border: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: $font__main;
   font-size: 36px;
   font-weight: 100;
   padding-top: 30px;
+  width: 100%;
 }
 
 // invalid and valid recognizer
 .ng-invalid.submitting fieldset input.ng-invalid,
 .ng-invalid.submitting fieldset select.ng-invalid {
-  animation: blur 1s infinite;
+  animation: blur .5s infinite;
+}
+
+@keyframes blur {
+  0% {
+    box-shadow: 0px 0px 3px 1px rgba(177, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0px 0px 3px 9px rgba(177, 0, 0, 0.5);
+  }
+}
+
+.ng-invalid.textarea fieldset input.ng-invalid,
+.ng-invalid.textarea fieldset select.ng-invalid {
+  animation: blur .5s infinite;
 }
 
 @keyframes blur {

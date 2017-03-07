@@ -17,7 +17,6 @@ import { AliensAPIService } from '../apiService/aliens';
 
 
 export class ReportComponent implements OnInit {
-
   // newEncounter: NewEncounter;
   alienType: Alien[];
   reportForm: FormGroup;

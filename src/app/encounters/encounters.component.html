@@ -1,16 +1,19 @@
-<div class="encounterpage">
-  <div class="text-wrapper">
-    <h1>Recent Encounters</h1>
-    <h2>See an Alien? Report it!</h2>
+<ng2-page-transition>
+  <router-outlet></router-outlet>
+  <div class="encounterpage">
+    <div class="text-wrapper">
+      <h1>Recent Encounters</h1>
+      <h2>See an Alien? Report it!</h2>
+    </div>
+    <!--<div class="article">-->
+    <ul class="article">
+      <li *ngFor="let encounter of encounterList" value="{{ encounter.atype }}">{{encounter.date}} - {{encounter.atype}}<br>{{encounter.action}}</li>
+      <!--</div>-->
+    </ul>
+    <div class="en-link">
+      <a routerLink="/report">
+        <p>Report Encounter</p>
+      </a>
+    </div>
   </div>
-  <!--<div class="article">-->
-  <ul class="article">
-<li *ngFor="let encounter of encounterList" value="{{ encounter.atype }}">{{encounter.date}} - {{encounter.atype}}<br>{{encounter.action}}</li> 
-<!--</div>-->
-  </ul>
-  <div class="en-link">
-    <a routerLink="/report">
-      <p>Report Encounter</p>
-    </a>
-  </div>
-</div>
+</ng2-page-transition>

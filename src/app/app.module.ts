@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-
+import { Ng2PageTransitionModule } from "ng2-page-transition";
 
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
@@ -37,7 +37,8 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    Ng2PageTransitionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

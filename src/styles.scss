@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-    margin: 0 auto;
+
+@import 'reset';
+body {
+  margin: 0 auto;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%), url('bg_image.jpg') no-repeat center;
+  background-size: contain, cover;
 }

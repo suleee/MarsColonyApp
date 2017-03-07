@@ -5,7 +5,6 @@ import { ENCOUNTERS_URL } from '../models/API';
 
 import { EncountersAPIService } from '../apiService/encounters';
 
-
 @Component({
   selector: 'app-encounters',
   templateUrl: './encounters.component.html',
