@@ -12,6 +12,12 @@ This is a web-based application for Earth colonists exploring Mars using Angular
 * Decorator (@Component, @Routes, etc.)
 * Interface (to represent API Data)
 * Component
+### TypeScript
+### Postman (for the API)
+### HTML5
+### SASS & CSS Animations
+### GIT for version control.
+
 
 ### Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
