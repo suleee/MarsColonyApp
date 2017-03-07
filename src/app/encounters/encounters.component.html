@@ -7,7 +7,7 @@
     </div>
     <!--<div class="article">-->
     <ul class="article">
-      <li *ngFor="let encounter of encounterList" value="{{ encounter.atype }}">{{encounter.date}} - {{encounter.atype}}<br>{{encounter.action}}</li>
+      <li *ngFor="let encounter of encounterList" value="{{ encounter.atype }}"><p class="date-title">{{encounter.date}} - {{encounter.atype}}</p><p class="info">{{encounter.action}}</p></li>
       <!--</div>-->
     </ul>
     <div class="en-link">
