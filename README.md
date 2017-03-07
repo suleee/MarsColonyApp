@@ -13,15 +13,15 @@ This is a web-based application for Earth colonists exploring Mars using Angular
 * Interface (to represent API Data)
 * Component
 
-### TypeScript
+#### TypeScript
 
-### Postman (for the API)
+#### Postman (for the API)
 
-### HTML5
+#### HTML5
 
-### SASS & CSS Animations
+#### SASS & CSS Animations
 
-### GIT for version control.
+#### GIT for version control.
 
 
 ### Development server
