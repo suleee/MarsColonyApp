@@ -21,7 +21,7 @@ This is a web-based application for Earth colonists exploring Mars using Angular
 
 #### SASS & CSS Animations
 
-#### GIT for version control.
+#### GIT
 
 
 ### Development server
