@@ -3,7 +3,7 @@ This is a web-based application for Earth colonists exploring Mars using Angular
 [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.0.
 
 
-<!--![alt tag](mars.png)-->
+![alt tag](mars.png)
 
 #Technologies used
 ### Angular 2 Router:
