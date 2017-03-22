@@ -5,7 +5,7 @@ This is a web-based application for Earth colonists exploring Mars using Angular
 
 ![alt tag](mars.png)
 
-#Technologies used
+# Technologies used
 ### Angular 2 Router:
 * ngForm,ngFor, ngIf, ngClass, ngModel and OnInit
 * Class (to represent form data)
